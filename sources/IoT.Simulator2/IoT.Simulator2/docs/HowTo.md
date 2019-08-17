@@ -1,4 +1,4 @@
-﻿# IOT Simulator documentation - How To
+﻿# Azure IOT Device Simulator - How To
 
 *v0.1, 16/08/2019*
 
