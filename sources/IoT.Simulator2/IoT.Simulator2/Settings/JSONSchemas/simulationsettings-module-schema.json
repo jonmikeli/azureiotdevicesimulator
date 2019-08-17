@@ -1,5 +1,0 @@
-{
-  "$schema": "simulationsettings-base-schema.json",
-  "title": "JSON Schema describing a device simulation module settings",
-  "type": "object"
-} 
