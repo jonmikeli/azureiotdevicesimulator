@@ -1,4 +1,4 @@
-﻿# Azure IOT Device Simulator - Help
+﻿# Azure IoT Device Simulator - Help
 *v0.1*
 
 This section describes the different artifacts of the solution and how they work.
