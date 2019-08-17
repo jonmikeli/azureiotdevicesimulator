@@ -1,5 +1,5 @@
-﻿# IOT Simulator documentation
-*v0.1, 07/07/2019*
+﻿# Azure IOT Device Simulator - Help
+*v0.1*
 
 This section describes the different artifacts of the solution and how they work.
 
