@@ -1,0 +1,21 @@
+{
+  "connectionString": "[IOT HUB NAME].azure-devices.net;DeviceId=[DEVIVE ID];SharedAccessKey=[SHARED KEY]",
+  "simulationSettings": {
+    "enableLatencyTests": true,
+    "latencyTestsFrecuency": 30,
+    "enableDevice": true,
+    "enableModules": false,
+    "enableTelemetryMessages": false,
+    "telemetryFrecuency": 10,
+    "enableErrorMessages": false,
+    "errorFrecuency": 20,
+    "enableCommissioningMessages": false,
+    "commissioningFrecuency": 30,
+    "enableTwinReportedMessages": false,
+    "twinReportedMessagesFrecuency": 60,
+    "enableReadingTwinProperties": false,
+    "enableC2DDirectMethods": true,
+    "enableC2DMessages": true,
+    "enableTwinPropertiesDesiredChangesNotifications": true
+  }
+}

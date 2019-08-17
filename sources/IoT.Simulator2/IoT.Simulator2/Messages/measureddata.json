@@ -1,0 +1,23 @@
+{
+  "deviceId": "",
+  "moduleId": "",
+  "timestamp": 0,
+  "schemaVersion": "v1.0",
+  "messageType": "data",
+  "data": [
+    {
+      "timestamp": 0,
+      "propertyName": "P1",
+      "propertyValue": 35,
+      "propertyUnit": "T",
+      "propertyDivFactor": 1
+    },
+    {
+      "timestamp": 0,
+      "propertyName": "P2",
+      "propertyValue": 1566,
+      "propertyUnit": "U",
+      "propertyDivFactor": 10
+    }
+  ]
+}

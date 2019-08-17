@@ -1,0 +1,9 @@
+{
+  "deviceId": "",
+  "moduleId": "",
+  "messageType": "error",
+  "errorCode": "code",
+  "errorSeverity": "severity",
+  "errorStatus": "status",
+  "timestamp": 13456
+}

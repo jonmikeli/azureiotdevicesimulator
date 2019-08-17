@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for SimulationSettingsBase entity",
+
+  "type": "object",
+
+  "properties": {
+    "enableTelemetryMessage": {
+      "type": "boolean",
+      "description": "Enables/disables telemetry messages."
+    },
+    "telemetryFrecuency": {
+      "type": "integer",
+      "description": "Sets the elapsed time (in seconds) between two messages."
+    },
+    "telemetryLogColor": {
+      "type": "string",
+      "description": "Sets the color used to display telemtry logs.",
+      "enum": [ "Black", "Blue", "Cyan", "DarkBlue", "DarkCyan", "DarkGray", "DarkGreen", "DarkMagenta", "DarkRed", "DarkYellow", "Gray", "Green", "Magenta", "Red", "White", "Yellow" ]
+      "default": "Blue"
+    },
+    "enableErrorMessages": {
+      "type": "boolean",
+      "description": "Enables/disables error messages."
+    },
+    "errorFrecuency": {
+      "type": "integer",
+      "description": "Sets the elapsed time (in seconds) between two messages."
+    },
+    "errorLogColor": {
+      "type": "string",
+      "description": "Sets the color used to display error logs.",
+      "enum": [ "Black", "Blue", "Cyan", "DarkBlue", "DarkCyan", "DarkGray", "DarkGreen", "DarkMagenta", "DarkRed", "DarkYellow", "Gray", "Green", "Magenta", "Red", "White", "Yellow" ],
+      "default": "Red"
+    },
+    "enableCommissioningMessages": {
+      "type": "boolean",
+      "description": "Enables/disables commissioning messages."
+    },
+    "commissioningFrecuency": {
+      "type": "integer",
+      "description": "Sets the elapsed time (in seconds) between two messages."
+    },
+    "commissioningLogColor": {
+      "type": "string",
+      "description": "Sets the color used to display commossioning logs.",
+      "enum": [ "Black", "Blue", "Cyan", "DarkBlue", "DarkCyan", "DarkGray", "DarkGreen", "DarkMagenta", "DarkRed", "DarkYellow", "Gray", "Green", "Magenta", "Red", "White", "Yellow" ],
+      "default": "Yellow"
+    },
+    "enableTwinReportedMessages": {
+      "type": "boolean",
+      "description": "Enables/disables Twin.Properties.Reported messages."
+    },
+    "twinReportedMessagesFrecuency": {
+      "type": "integer",
+      "description": "Sets the elapsed time (in seconds) between two messages."
+    },
+    "twinReportedLogColor": {
+      "type": "string",
+      "description": "Sets the color used to display twin reported properties logs.",
+      "enum": [ "Black", "Blue", "Cyan", "DarkBlue", "DarkCyan", "DarkGray", "DarkGreen", "DarkMagenta", "DarkRed", "DarkYellow", "Gray", "Green", "Magenta", "Red", "White", "Yellow" ],
+      "default": "Cyan"
+    },
+    "enableReadingTwinProperties": {
+      "type": "boolean",
+      "description": "Enables/disables reading Twin Properties."
+    },
+    "readingTwinLogColor": {
+      "type": "string",
+      "description": "Sets the color used to display read twin properties logs.",
+      "enum": [ "Black", "Blue", "Cyan", "DarkBlue", "DarkCyan", "DarkGray", "DarkGreen", "DarkMagenta", "DarkRed", "DarkYellow", "Gray", "Green", "Magenta", "Red", "White", "Yellow" ],
+      "default": "DarkCyan"
+    },
+    "enableTwinPropertiesDesiredChangesNotifications": {
+      "type": "boolean",
+      "description": "Enables/disables Twin.Properties.Desired changes handler."
+    },
+    "twinPropertiesDesiredChangesNotificationsLogColor": {
+      "type": "string",
+      "description": "Sets the color used to display twin changes notifications logs.",
+      "enum": [ "Black", "Blue", "Cyan", "DarkBlue", "DarkCyan", "DarkGray", "DarkGreen", "DarkMagenta", "DarkRed", "DarkYellow", "Gray", "Green", "Magenta", "Red", "White", "Yellow" ],
+      "default": "Green"
+    }
+  }
+}
