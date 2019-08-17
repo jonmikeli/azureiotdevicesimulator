@@ -20,5 +20,5 @@ COPY --from=publish /app .
 
 ARG packageVersion
 ARG environment
-LABEL version=${packageVersion}
-LABEL environment=${environment}
+LABEL "version=${packageVersion}"
+LABEL "environment=${environment}"
