@@ -1,6 +1,5 @@
-﻿# Azure IOT Device Simulator - How To
-
-*v0.1, 16/08/2019*
+﻿# Azure IoT Device Simulator - How To
+*v0.1*
 
 ## How to use the IoT simulator?
 
