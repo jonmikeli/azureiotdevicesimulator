@@ -19,6 +19,6 @@ WORKDIR /app
 COPY --from=publish /app .
 
 ARG packageVersion
-ARG ENVIRONMENT
+ARG environment
 LABEL version=${packageVersion}
-LABEL environment=${ENVIRONMENT}
+LABEL environment=${environment}
