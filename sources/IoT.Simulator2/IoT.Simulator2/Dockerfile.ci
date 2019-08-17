@@ -20,5 +20,5 @@ ARG environment
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-LABEL "version=${packageVersion}"
-LABEL "environment=${environment}"
+LABEL ersion=${packageVersion}
+LABEL environment=${environment}
