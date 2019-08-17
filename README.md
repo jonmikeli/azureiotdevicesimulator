@@ -11,4 +11,4 @@ Example of uses:
 The project is a .NET Core 2.x console application that implements most important client IoT features (Azure IoT SDK). The implementation relies on what Azure IoT Client SDK capabilities.
 
 ## More information
-- Detailled [Readme](./sources/IoT.Simulator2/IoT.Simulator2/docs/Readme.md) section.
+- Detailled [information hub](./sources/IoT.Simulator2/IoT.Simulator2/docs/Readme.md).
