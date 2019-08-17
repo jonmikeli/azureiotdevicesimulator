@@ -1,4 +1,4 @@
-﻿# IOT Simulator documentation - Latency Tests
+﻿# Azure IOT Device Simulator - Latency Tests
 *v0.1, 13/08/2019*
 
 This section describes a way to measure first level latency between a given device and the cloud solution.
