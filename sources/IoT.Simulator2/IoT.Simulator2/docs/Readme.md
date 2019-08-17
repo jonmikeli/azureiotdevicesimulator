@@ -1,4 +1,4 @@
-﻿# Azure IOT Device Simulator
+﻿# Azure IoT Device Simulator - Readme
 *v0.1*
 
 This project has for purpose to help IoT developers in terms of efficiency and simplicity when it comes to simulating IoT devices.
