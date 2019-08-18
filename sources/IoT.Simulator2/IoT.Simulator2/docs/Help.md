@@ -34,8 +34,8 @@ The device sends updated Reported Properties (Twins) for many operations.
 #### C2D
 ##### Direct Methods
 
-|Method name |Description|Request|Response|Comments|
-[:-|:-|:-|:-|
+|Method name|Description|Request|Response|Comments|
+|:-|:-|:-|:-|:-|
 | SendLatencyTest | Allows to start a [latency](LatencyTests.md) test between the given device and the IoT Hub is registered in. | timestamp, request's date | <ul><li>message with [latency](LatencyTests.md) (string)</li><li> result code, 200</li></ul>|The request contains the initial request timpestamp. Indeed, the request parameter is an integer representing the timestamp of the request date. <br> Hence, the direct method handler can math the time elapsed between the request and the response.<br>***NOTE: it requires an Azure Function handling part of the process (TODO:complete docs in a separate file).***|
 | Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the reboot method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
 | OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the reboot method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
@@ -73,7 +73,7 @@ Modules send updated Reported Properties (Twin) for many operations.
 ##### Direct Methods
 
 |Method name |Description|Request|Response|Comments|
-[:-|:-|:-|:-|
+|:-|:-|:-|:-|:-|
 | Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the reboot method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
 | OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the reboot method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
 | ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifiying that the method has been called (string).</li><li>result code, 400 (another code to illustrate different use cases).</li></ul>|
