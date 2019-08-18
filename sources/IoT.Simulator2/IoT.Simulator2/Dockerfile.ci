@@ -23,6 +23,8 @@ ARG author
 ARG copyright
 ARG github
 ARG name
+ARG description
+ARG tags
 
 WORKDIR /app
 COPY --from=publish /app .
@@ -33,3 +35,5 @@ LABEL author=${author}
 LABEL copyright=${copyright}
 LABEL github=${github}
 LABEL name=${name}
+LABEL description=${description}
+LABEL tags=${tags}
