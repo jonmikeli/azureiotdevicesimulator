@@ -19,10 +19,17 @@ FROM base AS final
 
 ARG packageVersion
 ARG environmentName
-
-LABEL version="${packageVersion}"
-LABEL environment="${environmentName}"
+ARG author
+ARG copyright
+ARG github
+ARG name
 
 WORKDIR /app
 COPY --from=publish /app .
 
+LABEL version="${packageVersion}"
+LABEL environment="${environmentName}"
+LABEL author="${author}"
+LABEL copyright="${copyright}"
+LABEL github="${github}"
+LABEL name="${name}"
