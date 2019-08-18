@@ -28,7 +28,7 @@ The application consist of:
 ##### Twins
 The device sends updated Reported Properties (Twins) for many operations.
 
-> [!INFORMATION]
+> [!NOTE]
 > Example: after OnOff Direct Method requests, in order to notify the actual status.
 
 #### C2D
@@ -66,7 +66,7 @@ Device Twin and inherently Tags can be read by the device.
 ##### Twins
 Modules send updated Reported Properties (Twin) for many operations.
 
-> [!INFORMATION]
+> [!NOTE]
 > Example: after OnOff Direct Method requests, in order to notify the actual status.
 
 #### C2D
