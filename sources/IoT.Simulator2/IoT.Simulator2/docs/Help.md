@@ -17,6 +17,13 @@ The application consist of:
    - error.json
    - measureddata.json
 
+*Global device model architecture*
+
+
+![Global device model architecture](images/GlobalDiagrams.png)
+
+
+
 ## Features
 ### Device
 #### D2C
