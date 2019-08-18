@@ -29,7 +29,7 @@ COPY --from=publish /app .
 
 LABEL version="${packageVersion}"
 LABEL environment="${environmentName}"
-LABEL author="${author}"
-LABEL copyright="${copyright}"
-LABEL github="${github}"
+LABEL author=${author}
+LABEL copyright=${copyright}
+LABEL github=${github}
 LABEL name="${name}"
