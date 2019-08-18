@@ -19,5 +19,44 @@ Technical information:
 
 ![Azure IoT Device Simulator Logs](sources/IoT.Simulator2/IoT.Simulator2/docs/images/AzureIoTDeviceSimulatorLos.gif)
 
+## Global features:
+ - device simulation
+ - module simulation
+ - JSON oriented device simulation configuration
+ - JSON oriented module oriented configuration
+ - no specific limitation in number of modules (only limited by IoT Hub constraints)
+ - containerized
+ - JSON oriented message definition
+ - implementation of full IoT flows (C2D, D2C)
+
+## Functional features
+The solution simulates the functional features described below:
+ - telemetry sent from a device
+ - a device consisting of different modules (either functional or technical). Ex: device with a module for tempeterature/humidity/pressure/etc and another module to check presence or manage actions
+ - firmware update over the air (FOTA)
+
+## Detailed technical features
+### D2C
+#### Device level
+ - IoT Messages
+ - Twins (Reported)
+
+#### Module level
+ - IoT Messages
+ - Twins (Reported)
+
+### C2D
+#### Device level
+ - Twins (Desired)
+ - Twins (Tags)
+ - Direct Methods
+ - Messages
+
+#### Module level
+ - Twins (Desired)
+ - Twins (Tags)
+ - Direct Methods
+ - Messages
+
 ## More information
 - Detailled [information](./sources/IoT.Simulator2/IoT.Simulator2/docs/Readme.md).
