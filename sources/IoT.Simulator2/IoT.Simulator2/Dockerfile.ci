@@ -14,10 +14,15 @@ RUN dotnet build "IoT.Simulator2.csproj" -c Release -o /app
 FROM build AS publish
 RUN dotnet publish "IoT.Simulator2.csproj" -c Release -o /app
 
+
+FROM base AS final
+
 ARG packageVersion
 ARG environmentName
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app .
+
 LABEL version="${packageVersion}"
 LABEL environment="${environmentName}"
+
+WORKDIR /app
+COPY --from=publish /app .
+
