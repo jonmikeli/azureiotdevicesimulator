@@ -15,7 +15,7 @@ Technical information:
  - .NET Core 2.x
  - Microsoft Azure IoT SDK (Device capabilities, including IoT Hub modules)
 
-*Azure IoT Device Simulator working ...*
+*Azure IoT Device Simulator logs*
 
 ![Azure IoT Device Simulator Logs](sources/IoT.Simulator2/IoT.Simulator2/docs/images/AzureIoTDeviceSimulatorLos.gif)
 
