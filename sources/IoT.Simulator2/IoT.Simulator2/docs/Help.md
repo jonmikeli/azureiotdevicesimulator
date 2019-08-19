@@ -1,9 +1,8 @@
 ﻿# Azure IoT Device Simulator - Help
-*v0.1*
 
 This section describes the different artifacts of the solution and how they work.
 
-As described in the [Readme](Readme.md) section, this application simulates different IoT use cases (D2C as well as C2D).
+As described in the [Readme](../../../../README.md) section, this application simulates different IoT use cases (D2C as well as C2D).
 
 ## Application
 The application consist of:
