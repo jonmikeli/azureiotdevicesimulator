@@ -9,7 +9,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 
 namespace IoT.Simulator2
 {
@@ -143,58 +142,6 @@ namespace IoT.Simulator2
 
                         if (_environmentName != "Production")
                         {
-
-                            ////Providers
-                            ////Data
-                            //loggingBuilder.AddProvider(new ColoredByMessageTypeConsoleLoggerProvider(new ColoredByMessageTypeConsoleLoggerConfiguration
-                            //{
-                            //    LogType = "data",
-                            //    Color = ConsoleColor.Cyan
-                            //}));
-
-                            ////error
-                            //loggingBuilder.AddProvider(new ColoredByMessageTypeConsoleLoggerProvider(new ColoredByMessageTypeConsoleLoggerConfiguration
-                            //{
-                            //    LogType = "error",
-                            //    Color = ConsoleColor.Red
-                            //}));
-
-                            ////commissioning
-                            //loggingBuilder.AddProvider(new ColoredByMessageTypeConsoleLoggerProvider(new ColoredByMessageTypeConsoleLoggerConfiguration
-                            //{
-                            //    LogType = "commissioning",
-                            //    Color = ConsoleColor.Yellow
-                            //}));
-
-                            ////c2dmessages
-                            //loggingBuilder.AddProvider(new ColoredByMessageTypeConsoleLoggerProvider(new ColoredByMessageTypeConsoleLoggerConfiguration
-                            //{
-                            //    LogType = "c2dmessages",
-                            //    Color = ConsoleColor.DarkGreen
-                            //}));
-
-                            ////c2ddirectmethods
-                            //loggingBuilder.AddProvider(new ColoredByMessageTypeConsoleLoggerProvider(new ColoredByMessageTypeConsoleLoggerConfiguration
-                            //{
-                            //    LogType = "c2ddirectmethods",
-                            //    Color = ConsoleColor.Green
-                            //}));
-
-                            ////c2dtwins
-                            //loggingBuilder.AddProvider(new ColoredByMessageTypeConsoleLoggerProvider(new ColoredByMessageTypeConsoleLoggerConfiguration
-                            //{
-                            //    LogType = "c2dtwins",
-                            //    Color = ConsoleColor.Magenta
-                            //}));
-
-                            ////system
-                            //loggingBuilder.AddProvider(new ColoredByMessageTypeConsoleLoggerProvider(new ColoredByMessageTypeConsoleLoggerConfiguration
-                            //{
-                            //    LogType = "system",
-                            //    Color = ConsoleColor.DarkYellow
-                            //}));
-
-
                             loggingBuilder.AddConsole();
                             loggingBuilder.AddDebug();
                         }
@@ -215,7 +162,6 @@ namespace IoT.Simulator2
             if (services == null)
                 throw new ArgumentNullException(nameof(services));
 
-            //services.AddTransient<SimulationApp>();
             services.AddSingleton<ISimulationService, DeviceSimulationService>();
         }
 
