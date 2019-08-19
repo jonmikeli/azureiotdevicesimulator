@@ -1,5 +1,4 @@
 # Azure IoT Device Simulator - Readme
-*v0.1*
 
 This project has for purpose to help IoT developers and testers. The solution is an Azure IoT Device simulator that implements different types of Cloud To Device (C2D) / Device To Cloud (D2C) flows between Microsoft IoT Hub and the simulated device.
 
