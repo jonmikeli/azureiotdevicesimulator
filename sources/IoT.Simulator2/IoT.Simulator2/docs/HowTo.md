@@ -8,7 +8,7 @@ You can find the Docker image at [this location](https://hub.docker.com/r/jonmik
 
 If you are not on containers, you can use the source code to compile the application and use it as a regular .NET Core 2.2.x Console application.
 
-If you need detailled documentation about what Azure IoT Device Simulator (or IoT Simulator) is, you can find additional information at:
+If you need detailed documentation about what Azure IoT Device Simulator (or IoT Simulator) is, you can find additional information at:
  - [Readme](../../../../Readme.md)
  - [Help](Help.md)
 
@@ -66,7 +66,7 @@ Minimal logs settings.
 
 **Development (appsettings.Development.json)**
 
-Detailled logs settings.
+Detailed logs settings.
 ```json
 {
   "Logging": {
