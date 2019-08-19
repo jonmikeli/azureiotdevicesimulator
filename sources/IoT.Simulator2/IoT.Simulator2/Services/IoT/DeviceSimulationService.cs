@@ -389,7 +389,7 @@ namespace IoT.Simulator2.Services
                 await _deviceClient.SetMethodHandlerAsync("LatencyTestCallback", LatencyTestCallback, null);
                 _logger.LogTrace($"{logPrefix}::{_deviceSettings.ArtifactId}::DIRECT METHOD LatencyTestCallback registered.");
 
-                await _deviceClient.SetMethodHandlerAsync("SendLatencyTest", LatencyTestCallback, null);
+                await _deviceClient.SetMethodHandlerAsync("SendLatencyTest", SendLatencyTest, null);
                 _logger.LogTrace($"{logPrefix}::{_deviceSettings.ArtifactId}::DIRECT METHOD SendLatencyTest registered.");
 
                 await _deviceClient.SetMethodHandlerAsync("Reboot", Reboot, null);
