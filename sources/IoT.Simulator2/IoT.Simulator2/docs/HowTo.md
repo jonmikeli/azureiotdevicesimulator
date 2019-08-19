@@ -1,20 +1,23 @@
 ﻿# Azure IoT Device Simulator - How To
-*v0.1*
+
 
 ## How to use the IoT simulator?
 
 The IoT Simulator has been containerized in order to simplify its delivery and use.
 You can find the Docker image at [this location](https://hub.docker.com/r/jonmikeli/azureiotdevicesimulator).
 
-If you need detailled documentation about what IoT Simulator is, you can find additional information at:
- - [Readme](/Readme.md)
+If you are not on containers, you can use the source code to compile the application and use it as a regular .NET Core 2.2.x Console application.
+
+If you need detailled documentation about what Azure IoT Device Simulator (or IoT Simulator) is, you can find additional information at:
+ - [Readme](../../../../Readme.md)
  - [Help](Help.md)
+
 
 ## How to get a Docker image?
 ### Prerequisites
 In order to use a Docker container, you need all the prerequistes [Docker](https://www.docker.com/) could need in your system.
 
-In addition, you will need an internet connection and allow the ports below:
+In addition, you will need an internet connection and be sure the ports below are open in your firewall:
  - 8883
  - 5671
  - 443
@@ -22,31 +25,35 @@ In addition, you will need an internet connection and allow the ports below:
 
 Finally, you will need enough storage memory to download the Docker image and create one or more containers.
 
+
 ### Steps to follow
-The IoT Simulator needs to basic things before starting it:
- - settings (need to be updated with connection settings)
+The IoT Simulator needs two basic things before starting:
+ - settings (need to be updated with proper connection settings)
  - message templates (included by default)
 
- Once those items are ready, a single command allows to start the simulator.
+ Once those items are ready, a single command allows to start the application.
 
 #### Settings
 Settings are based on 3 files:
- - [appsettings.json](#appsettings.json)
- - [devicesettings.json](#devicesettings.json)
- - [modulessettings.json](#modulessettings.json)
+ - [appsettings.json](#####appsettings.json)
+ - [devicesettings.json](#####devicesettings.json)
+ - [modulessettings.json](#####modulessettings.json)
 
-For details and explainations, see [help](./Help.md).
+For details and explainations, see [help](Help.md).
 
 > [!TIP]
+> 
 > The solution takes into account **settings** depending on the environment.
 > It can be set trough the environment variable ENVIRONMENT.
-> The solution looks for settings files respecting the common pattern *file.ENVIRONMENT.json*.
-> By default, the default setting files will be loaded first.
+> The solution looks for settings files respecting the common pattern *file.ENVIRONMENT.json* (similar to transformation files).
+> Default setting files will be loaded first in case no environment file is found.
 
 ##### appsettings.json
-This file allows to configure system related items (logs, etc).
+This file allows configuring system related items (logs, etc).
 
 **Production**
+
+Minimal logs settings.
 ```json
 {
   "Logging": {
@@ -57,45 +64,9 @@ This file allows to configure system related items (logs, etc).
 }
 ```
 
-**Development**
-```json
-{
-  "Logging": {
-    "Debug": {
-      "LogLevel": {
-        "Default": "Trace"
-      }
-    },
-    "Console": {
-      "IncludeScopes": true,
-      "LogLevel": {
-        "Default": "Trace"
-      }
-    },
-    "LogLevel": {
-      "Default": "Trace",
-      "System": "Trace",
-      "Microsoft": "Trace"
-    }
-  }
-}
-```
+**Development (appsettings.Development.json)**
 
-##### appsettings.json
-This file allows to configure system related items (logs, etc).
-
-**Production**
-```json
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Warning"
-    }
-  }
-}
-```
-
-**Development**
+Detailled logs settings.
 ```json
 {
   "Logging": {
@@ -120,7 +91,7 @@ This file allows to configure system related items (logs, etc).
 ```
 
 ##### devicesettings.json
-This file allows to configure system related items (logs, etc).
+This file allows configuring device simulation settings.
 
 ```json
 {
@@ -148,7 +119,7 @@ This file allows to configure system related items (logs, etc).
 ```
 
 ##### modulessettings.json
-This file allows to configure system related items (logs, etc).
+This file allows configuring module(s) simulation settings.
 
 ```json
 {
@@ -179,11 +150,12 @@ This file allows to configure system related items (logs, etc).
 
 #### Message templates
 You will find in this section the default templates of the messages sent by the simulator.
-You are totally free to change the and adapt them to your needs.
+You are totally free to change and adapt them to your needs.
 
 > [!WARNING]
+> 
 > Just keep in mind that many values are randomized by a service before sending the messages.
-> This version of the simulator does not deal with dynamic JSON Schemas. So, if the message template is complete reviewed and new randomized properties are added, you will need to either update the existing message service or create yours and update the IoC/DI of the solution.
+> This version of the simulator does not deal with dynamic JSON Schemas. So, if the message template is completely reviewed and new randomized properties are added, you will need to either update the existing message service or create yours and update the IoC/DI of the solution.
 
 ##### Measured data / telemetry message
 ```json
@@ -248,7 +220,15 @@ dotnet IoT.Simulator2.dll
 ```
 
 **Changing environment**
+
+Linux
 ```cmd
 export ENVIRONMENT=Development
+dotnet IoT.Simulator2.dll
+```
+
+Windows
+```cmd
+set ENVIRONMENT=Development
 dotnet IoT.Simulator2.dll
 ```
