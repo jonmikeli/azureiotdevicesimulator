@@ -33,6 +33,32 @@ Technical information:
 
 ## Functional features
 
+### Device level (C2D/D2C)
+
+*Commands*
+ - Request latency test
+ - reboot device
+ - device On/Off
+ - read device Twin
+ - generic command (with JSON payload)
+ - generic command
+ - update telemetry interval
+ 
+ *Messages*
+ The device can send messages of different types (telemetry, error, commissioning).
+ 
+ *Twin*
+ Any change in the Desired properties is handled by the device.
+
+
+### Module level (C2M/M2C)
+The features at module level are the identical to the device features except the latency tests.
+
+[Functional features details](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
+
+  
+## Detailled technical features
+
 Functional features are based on the generic technical features:
  - telemetry sent from a device.
  - a device can contain one or many modules.
@@ -44,10 +70,7 @@ Functional features are based on the generic technical features:
  - commandes received by a module.
  - Twin Desired properties changed notification (for devices).
  - Twin Desired properties changed notification (for modules).
- 
- Functional use cases are described [here](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
-  
-## Detailled technical features
+
 ### D2C
 #### Device level
  - IoT Messages
