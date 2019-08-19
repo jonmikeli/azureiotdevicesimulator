@@ -14,6 +14,7 @@ The application consist of:
    - [error.json](####error.json) (examples below)
    - [measureddata.json](####measureddata.json) (examples below)
 
+
 *Global device model architecture*
 
 
@@ -27,13 +28,13 @@ The application consist of:
 ##### Messages
 1. [Commissioning](##Commissioning) messages
 2. [Measured](####measureddata.json) data messages (aka telemetry)
-3. Error messages (functional errors sent by devices)
+3. [Error](####error.json) messages (functional errors sent by devices)
 
 ##### Twins
-The device sends updated Reported Properties (Twins) for many operations.
+The device sends updated Reported Properties (Twins) after many operations/commands.
 
 > [!NOTE]
-> Example: after OnOff Direct Method requests, in order to notify the actual status.
+> Example: after a OnOff Direct Method request, the device sends its status to the cloud solution (Microsoft Azure IoT Hub) using the Twin Reported Properties.
 
 #### C2D
 ##### Direct Methods
