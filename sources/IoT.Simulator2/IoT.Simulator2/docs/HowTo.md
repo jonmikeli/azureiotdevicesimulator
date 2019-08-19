@@ -7,7 +7,7 @@ The IoT Simulator has been containerized in order to simplify its delivery and u
 You can find the Docker image at [this location](https://hub.docker.com/r/jonmikeli/azureiotdevicesimulator).
 
 If you need detailled documentation about what IoT Simulator is, you can find additional information at:
- - [Readme](Readme.md)
+ - [Readme](/Readme.md)
  - [Help](Help.md)
 
 ## How to get a Docker image?
@@ -249,5 +249,6 @@ dotnet IoT.Simulator2.dll
 
 **Changing environment**
 ```cmd
-dotnet IoT.Simulator2.dll --ENVIRONMENT=Development
+export ENVIRONMENT=Development
+dotnet IoT.Simulator2.dll
 ```
