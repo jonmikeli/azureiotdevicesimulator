@@ -64,7 +64,7 @@ Device Twin and inherently Tags can be read by the device.
 
 ### Modules
 
-#### D2C
+#### M2C
 ##### Messages
 1. [Commissioning](##Commissioning) messages
 2. Measured data messages (aka telemetry)
@@ -76,7 +76,7 @@ Modules send updated Reported Properties (Twin) for many operations.
 > [!NOTE]
 > Example: after OnOff Direct Method requests, in order to notify the actual status.
 
-#### C2D
+#### C2M
 ##### Direct Methods
 
 |Method name |Description|Request|Response|Comments|
