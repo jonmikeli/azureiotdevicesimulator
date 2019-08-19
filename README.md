@@ -1,14 +1,14 @@
 # Azure IoT Device Simulator
 *v0.1*
 
-This project has for purpose to help IoT developers and testers in terms of efficiency and simplicity when it comes to simulating IoT devices. This simulator implements different types of C2D/D2C flows between Microsoft IoT Hub and the simulated device.
+This project has for purpose to help IoT developers and testers. The solution is an Azure IoT Device simulator that implements different types of Cloud To Device (C2D) / Device To Cloud (D2C) flows between Microsoft IoT Hub and the simulated device.
 
-[*Detailled information*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md)
-
-[*How to*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
+For more details:
+ - [*Detailled information*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md)
+ - [*How to*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
 
 Example of uses:
- - development tool for developers working in IoT cloud solutions
+ - development tool for developers working in Microsoft Azure IoT solutions (cloud)
  - tester tool in IoT-oriented projects
  - scalable IoT simulation platforms
  - fast and simple development of IoT devices
@@ -24,34 +24,36 @@ Technical information:
 ## Global features:
  - device simulation
  - module simulation
- - JSON oriented device simulation configuration
- - JSON oriented module oriented configuration
+ - device simulation configuration (JSON-based)
+ - oriented module oriented configuration (JSON-based)
  - no specific limitation in the number of modules (only limited by IoT Hub constraints)
- - containerized / containerizable
- - JSON oriented message definition
- - implementation of full IoT flows (C2D, D2C)
+ - containerizable
+ - message templates based on JSON
+ - implementation of full IoT flows (C2D, D2C, C2M, M2C)
 
 ## Functional features
 
-The solution simulates the functional features described below:
- - telemetry sent from a device
+Functional features are based on the generic technical features:
+ - telemetry sent from a device.
  - a device can contain one or many modules.
- - each modules behaves independently with its own flows (C2M/M2C) and its configuration setting.
- - telemetry sent from a module
- - messages received by a device
- - messages received by a module
- - orders received by a device
- - orders received by a module
- - Twin Desired properties changed notification (for devices)
- - Twin Desired properties changed notification (for modules)
+ - each module behaves independently with its own flows (C2M/M2C) and its configuration settings.
+ - telemetry sent from a module.
+ - messages received by a device.
+ - messages received by a module.
+ - commands received by a device.
+ - commandes received by a module.
+ - Twin Desired properties changed notification (for devices).
+ - Twin Desired properties changed notification (for modules).
  
-## Detailed technical features
+ Functional use cases are described [here](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
+  
+## Detailled technical features
 ### D2C
 #### Device level
  - IoT Messages
  - Twins (Reported)
 
-#### Module level
+#### Module level (M2C)
  - IoT Messages
  - Twins (Reported)
 
@@ -62,7 +64,7 @@ The solution simulates the functional features described below:
  - Direct Methods
  - Messages
 
-#### Module level
+#### Module level (C2M)
  - Twins (Desired)
  - Twins (Tags)
  - Direct Methods
