@@ -52,7 +52,7 @@ The device sends updated Reported Properties (Twins) after many operations/comma
 
 
 ##### Messages
-The device can be configured to receive generic messages coming from the cloud (IoT Hub).
+The device can be configured to receive generic messages coming from the cloud (Microsoft Azure IoT Hub C2D Messages).
 
 ##### Twins
 ###### Desired
