@@ -21,7 +21,7 @@ Technical information:
 
 ![Azure IoT Device Simulator Logs](sources/IoT.Simulator2/IoT.Simulator2/docs/images/AzureIoTDeviceSimulatorLos.gif)
 
-## Global features:
+## Global features
  - device simulation
  - module simulation
  - device simulation configuration (JSON-based)
@@ -54,12 +54,12 @@ Technical information:
 ### Module level (C2M/M2C)
 The features at module level are the identical to the device features except the latency tests.
 
-[Functional features details](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
+[details](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
 
   
-## Detailled technical features
+## Global technical features
 
-Functional features are based on the generic technical features:
+Functional features are based on these generic technical features:
  - telemetry sent from a device.
  - a device can contain one or many modules.
  - each module behaves independently with its own flows (C2M/M2C) and its configuration settings.
