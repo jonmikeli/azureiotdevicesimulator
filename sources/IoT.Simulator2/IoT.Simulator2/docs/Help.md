@@ -6,13 +6,13 @@ This section describes the different artifacts of the solution and how they work
 The application consist of:
  - an application console (.NET Core 2.2.x)
  - configuration files:
-   - appsettings.json (described below)
-   - devicesettings.json (described below)
-   - modulessettings.json (described below)
+   - [appsettings.json](####appsettings.json) (described below)
+   - [devicesettings.json](####devicesettings.json) (described below)
+   - [modulessettings.json](####modulessettings.json) (described below)
  - message template files
-   - commissioning.json (examples below)
-   - error.json (examples below)
-   - measureddata.json (examples below)
+   - [commissioning.json](####comissioning.json) (examples below)
+   - [error.json](####error.json) (examples below)
+   - [measureddata.json](####measureddata.json) (examples below)
 
 *Global device model architecture*
 
