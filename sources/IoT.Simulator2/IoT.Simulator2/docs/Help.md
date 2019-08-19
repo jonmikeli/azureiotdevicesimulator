@@ -34,6 +34,7 @@ The application consist of:
 The device sends updated Reported Properties (Twins) after many operations/commands.
 
 > [!NOTE]
+> 
 > Example: after a OnOff Direct Method request, the device sends its status to the cloud solution (Microsoft Azure IoT Hub) using the Twin Reported Properties.
 
 #### C2D
@@ -61,6 +62,14 @@ Any change in a Desired property (device level) is notified to the device and it
 ###### Tags
 Device Twin and inherently Tags can be read by the device.
 
+> ![NOTE]
+> 
+> ###### Tags and Microsoft IoT Hub Jobs
+>
+> The simulator can benefit from the use of Microsoft IoT Hub Jobs for operations based in property queries.
+> A typical example of this would be a FOTA (Firmware Over The Air) update according to criteria based in Twin.Tag properties (ex: firmwareVersion, location, environment, etc).
+
+
 ### Modules
 
 #### M2C
@@ -73,6 +82,7 @@ Device Twin and inherently Tags can be read by the device.
 Modules send updated Reported Properties (Twins) after many operations/commands.
 
 > [!NOTE]
+> 
 > Example: after a OnOff Direct Method request, a givne module sends its status to the cloud solution (Microsoft Azure IoT Hub) using the Twin Reported Properties.
 
 #### C2M
@@ -123,11 +133,13 @@ The features of the application rely on two main components:
   1. runing the *Docker container* (which contains in turn the .NET Core binaries, packages and other required prerequisites)
   
  > ![NOTE]
+ > 
  > See [Docker](https://www.docker.com) and container oriented development for those who are not familiar with.
  
  Whatever the alternative will be, check that the **3 configuration** files are set properly.
 
  > ![IMPORTANT]
+ > 
  > The 3 configurations files have be present and contain the proper Microsoft IoT Hub connection strings, IDs or keys.
 
  
@@ -160,10 +172,13 @@ The features of the application rely on two main components:
 }
  ```
 
- >[!NOTE]
- >The solution contains different settings depending on the environment (similar to transformation files).
 
- >Example (Development environment) - *appsettings.Development.json*:
+ > [!NOTE]
+ >
+ > The solution contains different settings depending on the environment (similar to transformation files).
+
+
+ > Example (Development environment) - *appsettings.Development.json*:
   ```json
  {
   "Logging": {
@@ -220,6 +235,7 @@ The device behavior is configured by the *devicessettings.json* configuration fi
 Properties are quite self-explanatory.
 
 > [!NOTE]
+> 
 > Emission frequency rates are set in seconds.
 
 
@@ -275,6 +291,7 @@ Modules' behaviors are configured by the *modulessettings.json* configuration fi
 ```
 
 > [!NOTE]
+> 
 > Emission frequency rates are set in seconds.
 
 
@@ -319,6 +336,7 @@ Modules' behaviors are configured by the *modulessettings.json* configuration fi
 Properties are quite self-explanatory.
 
 > [!NOTE]
+> 
 > Emission frequency rates are set in seconds.
 
 #### modulessettings.json
@@ -368,6 +386,7 @@ Properties are quite self-explanatory.
 ```
 
 > [!NOTE]
+> 
 > Emission frequency rates are set in seconds.
 
 
@@ -376,6 +395,7 @@ Properties are quite self-explanatory.
 The messages below are basic proposals to start working. You will probably need to adjust them to each of your IoT projects taking into account your customers' requirements.
 
 > [!TIP]
+> 
 > `deviceId` and `messageType` fields have been included in the message to simplify processes in the backend side.
 > Indeed, even though these two properties can be reachable in the metadata of the message, having them inside the message itself brings simplicity to richer scenarios (ex: gateways sending messages in behalf of devices) and storing that information in the repository (autosufficient message). 
 > Debugging and message routings at Microsoft Azure IoT Hub level are other of the fields that benefit from this practice.
@@ -399,7 +419,8 @@ This being said, if at some point you need to avoid including that information i
 ```
 
 > [!WARNING]
-> No moduleId is required since commissioning is related to devices and only devices (functional choice).
+> 
+> No `moduleId` is required since commissioning is related to devices and only devices (functional choice).
 
 
 #### error.json
@@ -416,7 +437,8 @@ This being said, if at some point you need to avoid including that information i
 ```
 
 > [!WARNING]
-> moduleId can be empty in case the message is sent by a device.
+> 
+> `moduleId` can be empty in case the message is sent by a device.
 
 #### measureddata.json
 
@@ -450,7 +472,8 @@ This responds to data flow optimization scenarios and explains the chosen messag
 ```
 
 > [!WARNING]
-> moduleId can be empty in case the message is sent by a device.
+> 
+> `moduleId` can be empty in case the message is sent by a device.
 
 ## Evolutivity
 
