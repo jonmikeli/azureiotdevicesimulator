@@ -66,34 +66,34 @@ Device Twin and inherently Tags can be read by the device.
 #### M2C
 ##### Messages
 1. [Commissioning](##Commissioning) messages
-2. Measured data messages (aka telemetry)
-3. Error messages (functional errors sent by modules)
+2. [Measured](####measureddata.json) data messages (aka telemetry)
+3. [Error](####error.json) messages (functional errors sent by devices)
 
 ##### Twins
-Modules send updated Reported Properties (Twin) for many operations.
+Modules send updated Reported Properties (Twins) after many operations/commands.
 
 > [!NOTE]
-> Example: after OnOff Direct Method requests, in order to notify the actual status.
+> Example: after a OnOff Direct Method request, a givne module sends its status to the cloud solution (Microsoft Azure IoT Hub) using the Twin Reported Properties.
 
 #### C2M
 ##### Direct Methods
 
 |Method name |Description|Request|Response|Comments|
 |:-|:-|:-|:-|:-|
-| Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the reboot method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
-| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the reboot method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
-| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifiying that the method has been called (string).</li><li>result code, 400 (another code to illustrate different use cases).</li></ul>|
-| GenericJToken | Generic method | JSON Token | <ul><li>message notifiying that the method has been called (string).</li><li> result code, 200</li></ul>|
-| Generic | Generic method | string | <ul><li>message notifiying that the method has been called (string).</li><li> result code, 200</li></ul>|
-| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifiying that the method has been called (string).</li><li> result code, 200</li></ul>|
+| Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the Reboot Direct Method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
+| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the OnOff Direct Method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
+| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifiying that the ReadTwins Direct Method has been called (string).</li><li>result code, 200.</li></ul>|
+| GenericJToken | Generic method | JSON Token | <ul><li>message notifiying that the GenericJToken Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| Generic | Generic method | string | <ul><li>message notifiying that the Generic Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifiying that the SetTelemetryInterval Direct Method has been called (string).</li><li> result code, 200</li></ul>|
 
 
 ##### Messages
-Each module can be configured to receive generic messages coming from the cloud (IoT Hub).
+Each module can be configured to receive generic messages coming from the cloud (Microsoft Azure IoT Hub).
 
 ##### Twins
 ###### Desired
-Any change in a Desired property (module level) is notified to the module and it can be handled.
+Any change in a Desired property (**module level**) is notified to the module and it can be handled.
 
 ###### Tags
 Twins and inherently Tags can be read by the module.
