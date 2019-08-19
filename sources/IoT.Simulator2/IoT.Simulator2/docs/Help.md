@@ -43,12 +43,12 @@ The device sends updated Reported Properties (Twins) after many operations/comma
 |:-|:-|:-|:-|:-|
 | SendLatencyTest | Allows to start a [latency](LatencyTests.md) test between a given device and the IoT Hub it is registered in. | ```{ "deviceId"="", "messageType"="latency", "startTimestamp"=12345} ```| NA |The request contains the initial request timpestamp. <br>***NOTE: this feature requires an [Azure Function](https://github.com/jonmikeli/azureiotdevicesimulator/tree/master/sources/IoT.Simulator2/IoT.Simulator2.AF) responding to the latency test requests and calling back the C2D LatencyTestCallBack Direct Method.***|
 |LatencyTestCallBack|Allows to end a [latency](LatencyTests.md) test between a given device and the IoT Hub it is registered in. |```startTimestamp``` value, allowing to math the [latency](LatencyTests.md) (string)|<ul><li>message notifiying that the LatencyTestCallBack Direct Method has been called (string).</li><li> result code, 200</li></ul>|NA|
-| Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the reboot method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
-| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the reboot method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
-| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifiying that the method has been called (string).</li><li>result code, 400 (another code to illustrate different use cases).</li></ul>|
-| GenericJToken | Generic method | JSON Token | <ul><li>message notifiying that the method has been called (string).</li><li> result code, 200</li></ul>|
-| Generic | Generic method | string | <ul><li>message notifiying that the method has been called (string).</li><li> result code, 200</li></ul>|
-| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifiying that the method has been called (string).</li><li> result code, 200</li></ul>|
+| Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the Reboot Direct Method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
+| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the OnOff Direct Method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
+| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifiying that the ReadTwins Direct Method has been called (string).</li><li>result code, 400 (another code to illustrate different use cases).</li></ul>|
+| GenericJToken | Generic method | JSON Token | <ul><li>message notifiying that the GenericJToken Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| Generic | Generic method | string | <ul><li>message notifiying that the Generic Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifiying that the SetTelemetryInterval Direct Method has been called (string).</li><li> result code, 200</li></ul>|
 
 
 ##### Messages
