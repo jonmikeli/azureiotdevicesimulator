@@ -2,19 +2,17 @@
 
 This section describes the different artifacts of the solution and how they work.
 
-As described in the [Readme](../../../../README.md) section, this application simulates different IoT use cases (D2C as well as C2D).
-
 ## Application
 The application consist of:
  - an application console (.NET Core 2.2.x)
  - configuration files:
-   - appsettings.json
-   - devicesettings.json
-   - modulessettings.json
+   - appsettings.json (described below)
+   - devicesettings.json (described below)
+   - modulessettings.json (described below)
  - message template files
-   - commissioning.json
-   - error.json
-   - measureddata.json
+   - commissioning.json (examples below)
+   - error.json (examples below)
+   - measureddata.json (examples below)
 
 *Global device model architecture*
 
@@ -28,7 +26,7 @@ The application consist of:
 #### D2C
 ##### Messages
 1. [Commissioning](##Commissioning) messages
-2. Measured data messages (aka telemetry)
+2. [Measured](####measureddata.json) data messages (aka telemetry)
 3. Error messages (functional errors sent by devices)
 
 ##### Twins
