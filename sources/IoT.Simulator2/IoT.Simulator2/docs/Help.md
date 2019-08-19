@@ -109,14 +109,27 @@ The features of the application rely on two main components:
  
  The device component is configured by a ***devicesettings.json*** file while the modules are configured by a ***modulessettings.json*** file.
 
+
+ *Device model architecture*
+ ![Device model architecture](images/GlobalDiagrams.png)
+
+
+
 ### Runing the simulator
  The simulator is a .NET Core application.
  
  To run the simulator, there are two alternatives:
-  1. runing the simulator as a *.NET Core binary**
-  1. runing the *Docker container* (which contains in turn the .NET Core binaries and other required prerequisites, see [Docker](https://www.docker.com) and container oriented development for those who are not familiar with)
+  1. runing the simulator as a **.NET Core application** (Console Application)
+  1. runing the *Docker container* (which contains in turn the .NET Core binaries, packages and other required prerequisites)
+  
+ > ![NOTE]
+ > See [Docker](https://www.docker.com) and container oriented development for those who are not familiar with.
  
  Whatever the alternative will be, check that the **3 configuration** files are set properly.
+
+ > ![IMPORTANT]
+ > The 3 configurations files have be present and contain the proper Microsoft IoT Hub connection strings, IDs or keys.
+
  
  #### Runing .NET Core application
  Run the command below:
@@ -129,11 +142,7 @@ The features of the application rely on two main components:
  docker run -ti --name [containername] [imagename]
  ```
 
-> [!IMPORTANT]
-> The entrypoint of the container is the .NET Core application.
-> So, no need to execute any dotnet command in order to start the simulator.
-
- You can get ready to use Docker images of the simulator from [this Docker repository](https://hub.docker.com/r/jonmikeli/azureiotdevicesimulator).
+ You can get ready to use Docker images of the Azure IoT Device Simulator [here](https://hub.docker.com/r/jonmikeli/azureiotdevicesimulator).
 
 
  ### Configurations
@@ -152,9 +161,9 @@ The features of the application rely on two main components:
  ```
 
  >[!NOTE]
- >The solution contains different settings depending on the environment.
+ >The solution contains different settings depending on the environment (similar to transformation files).
 
- >Example (Development environment):
+ >Example (Development environment) - *appsettings.Development.json*:
   ```json
  {
   "Logging": {
@@ -177,6 +186,7 @@ The features of the application rely on two main components:
   }
 }
  ```
+
 
 #### Device
 IoT Simulator is linked to **one and only one** device.
@@ -211,6 +221,7 @@ Properties are quite self-explanatory.
 
 > [!NOTE]
 > Emission frequency rates are set in seconds.
+
 
 #### Modules
 IoT Simulator's device can contain **zero, one or more modules but no module is mandatory**.
@@ -265,6 +276,7 @@ Modules' behaviors are configured by the *modulessettings.json* configuration fi
 
 > [!NOTE]
 > Emission frequency rates are set in seconds.
+
 
 
 ### Configuration files
@@ -361,12 +373,12 @@ Properties are quite self-explanatory.
 
 ### Messages
 
-The messages below are basic common proposals allowing to start working. You will probably need to adjust them to each of your IoT projects according to your customers' requirements.
+The messages below are basic proposals to start working. You will probably need to adjust them to each of your IoT projects taking into account your customers' requirements.
 
 > [!TIP]
 > `deviceId` and `messageType` fields have been included in the message to simplify processes in the backend side.
-> Indeed, even though these two properties can be rechable with in the metadata of the message, having them inside the message allows different scenarios (ex: gateways sending messages in behalf of others) and storing that information in the repository (autosufficient message, which could be reached by backend processes but we saved them proceeding this way). 
-> Debugging and message routings at IoT Hub level are other of the fields that benefit from this practice.
+> Indeed, even though these two properties can be reachable in the metadata of the message, having them inside the message itself brings simplicity to richer scenarios (ex: gateways sending messages in behalf of devices) and storing that information in the repository (autosufficient message). 
+> Debugging and message routings at Microsoft Azure IoT Hub level are other of the fields that benefit from this practice.
 
 This being said, if at some point you need to avoid including that information in the message, feel free to do it. Routing could also work on metadata.
 
@@ -387,7 +399,7 @@ This being said, if at some point you need to avoid including that information i
 ```
 
 > [!WARNING]
-> No moduleId is required since commissioning is related to devices.
+> No moduleId is required since commissioning is related to devices and only devices (functional choice).
 
 
 #### error.json
@@ -409,7 +421,7 @@ This being said, if at some point you need to avoid including that information i
 #### measureddata.json
 
 We consider each item (device or module) can send many "measured data" in a single message.
-This responds to data flow optimization scenarios.
+This responds to data flow optimization scenarios and explains the chosen message schema.
 
 ```json
 {
@@ -464,7 +476,7 @@ services.AddTransient<ICommissioningMessageService, SimpleCommissioningMessageSe
 ```
 
 # Lexique
-A few meanings in the context of this document.
+A few word explanations to be sure they are understood in the context of this document.
 
 ## Commissioning
 
@@ -472,7 +484,7 @@ Commissioning represents the act of linking a provisioned device and a user (or 
 
 ## Provisioning
 
-Provisioning represents the action of creating an identity for the device in the IoT Hub.
+Provisioning represents the action of creating an identity for the device in the Microsoft Azure IoT Hub.
 
 ## Azure IoT related vocabulary
 
