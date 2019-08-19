@@ -3,7 +3,9 @@
 
 This project has for purpose to help IoT developers and testers in terms of efficiency and simplicity when it comes to simulating IoT devices. This simulator implements different types of C2D/D2C flows between Microsoft IoT Hub and the simulated device.
 
-[*Detailled information*](./sources/IoT.Simulator2/IoT.Simulator2/docs/Readme.md).
+[*Detailled information*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md)
+
+[*How to*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
 
 Example of uses:
  - development tool for developers working in IoT cloud solutions
@@ -59,4 +61,6 @@ The solution simulates the functional features described below:
  - Messages
 
 ## More information
-- Detailled [information](./sources/IoT.Simulator2/IoT.Simulator2/docs/Readme.md).
+
+- Details about **HOW the solution WORKS** are provided in the [help](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md) section.
+- Details about **HOW the solution can be USED** are provided in the [how to](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md) section.
