@@ -26,17 +26,25 @@ Technical information:
  - module simulation
  - JSON oriented device simulation configuration
  - JSON oriented module oriented configuration
- - no specific limitation in number of modules (only limited by IoT Hub constraints)
- - containerized
+ - no specific limitation in the number of modules (only limited by IoT Hub constraints)
+ - containerized / containerizable
  - JSON oriented message definition
  - implementation of full IoT flows (C2D, D2C)
 
 ## Functional features
+
 The solution simulates the functional features described below:
  - telemetry sent from a device
- - a device consisting of different modules (either functional or technical). Ex: device with a module for tempeterature/humidity/pressure/etc and another module to check presence or manage actions
- - firmware update over the air (FOTA)
-
+ - a device can contain one or many modules.
+ - each modules behaves independently with its own flows (C2M/M2C) and its configuration setting.
+ - telemetry sent from a module
+ - messages received by a device
+ - messages received by a module
+ - orders received by a device
+ - orders received by a module
+ - Twin Desired properties changed notification (for devices)
+ - Twin Desired properties changed notification (for modules)
+ 
 ## Detailed technical features
 ### D2C
 #### Device level
