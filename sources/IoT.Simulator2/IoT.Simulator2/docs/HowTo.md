@@ -219,7 +219,7 @@ You are totally free to change and adapt them to your needs.
 dotnet IoT.Simulator2.dll
 ```
 
-**Changing environment**
+**Changing the environment**
 
 Linux
 ```cmd
