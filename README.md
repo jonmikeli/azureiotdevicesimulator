@@ -51,7 +51,7 @@ Technical information:
 
 
 ### Module level (C2M/M2C)
-The features at module level are the identical to the device features except the latency tests.
+The features at the module level are the identical to the device features except for the latency tests.
 
 [details](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
 
