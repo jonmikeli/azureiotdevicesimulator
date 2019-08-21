@@ -25,7 +25,7 @@ Technical information:
  - module simulation
  - device simulation configuration (JSON-based)
  - oriented module oriented configuration (JSON-based)
- - no specific limitation in the number of modules (only limited by IoT Hub constraints)
+ - no specific limitation on the number of modules (only limited by IoT Hub constraints)
  - containerizable
  - message templates based on JSON
  - implementation of full IoT flows (C2D, D2C, C2M, M2C)
