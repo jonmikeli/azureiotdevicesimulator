@@ -36,7 +36,7 @@ The device sends updated Reported Properties (Twins) after many operations/comma
 
 > [!NOTE]
 > 
-> Example: after a OnOff Direct Method request, the device sends its status to the cloud solution (Microsoft Azure IoT Hub) using the Twin Reported Properties.
+> Example: after an OnOff Direct Method request, the device sends its status to the cloud solution (Microsoft Azure IoT Hub) using the Twin Reported Properties.
 
 #### C2D
 ##### Direct Methods
