@@ -43,32 +43,30 @@ The device sends updated Reported Properties (Twins) after many operations/comma
 
 |Method name|Description|Request|Response|Comments|
 |:-|:-|:-|:-|:-|
-| SendLatencyTest | Allows to start a [latency](LatencyTests.md) test between a given device and the IoT Hub it is registered in. | ```{ "deviceId":"", "messageType":"latency", "startTimestamp":12345} ```| NA |The request contains the initial request timpestamp. <br>***NOTE: this feature requires an [Azure Function](https://github.com/jonmikeli/azureiotdevicesimulator/tree/master/sources/IoT.Simulator2/IoT.Simulator2.AF) responding to the latency test requests and calling back the C2D LatencyTestCallBack Direct Method.***|
-|LatencyTestCallBack|Allows to end a [latency](LatencyTests.md) test between a given device and the IoT Hub it is registered in. |```startTimestamp``` value, allowing to math the [latency](LatencyTests.md) (string)|<ul><li>message notifiying that the LatencyTestCallBack Direct Method has been called (string).</li><li> result code, 200</li></ul>|NA|
+| SendLatencyTest | Allows to start a [latency](LatencyTests.md) test between a given device and the Microsoft Azure IoT Hub where the device is registered. | ```{ "deviceId":"", "messageType":"latency", "startTimestamp":12345} ```| NA |The request contains the initial  timpestamp, which is sent back to the device after all the process in order to allow him to measure latency. <br>***NOTE: this feature requires an [Azure Function](https://github.com/jonmikeli/azureiotdevicesimulator/tree/master/sources/IoT.Simulator2/IoT.Simulator2.AF) responding to the latency test requests and calling back the C2D LatencyTestCallBack Direct Method.***|
+|LatencyTestCallBack|Allows to end a [latency](LatencyTests.md) test between a given device and the Microsoft Azure IoT Hub where the device is registered. |```startTimestamp``` value, allowing to math the [latency](LatencyTests.md) (string)|<ul><li>message notifying that the LatencyTestCallBack Direct Method has been called (string).</li><li> result code, 200</li></ul>|NA|
 | Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the Reboot Direct Method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
-| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the OnOff Direct Method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
-| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifiying that the ReadTwins Direct Method has been called (string).</li><li>result code, 400 (another code to illustrate different use cases).</li></ul>|
-| GenericJToken | Generic method | JSON Token | <ul><li>message notifiying that the GenericJToken Direct Method has been called (string).</li><li> result code, 200</li></ul>|
-| Generic | Generic method | string | <ul><li>message notifiying that the Generic Direct Method has been called (string).</li><li> result code, 200</li></ul>|
-| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifiying that the SetTelemetryInterval Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifying that the OnOff Direct Method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
+| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifying that the ReadTwins Direct Method has been called (string).</li><li>result code, 200</li></ul>|
+| GenericJToken | Generic method | JSON Token | <ul><li>message notifying that the GenericJToken Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| Generic | Generic method | string | <ul><li>message notifying that the Generic Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifying that the SetTelemetryInterval Direct Method has been called (string).</li><li> result code, 200</li></ul>|
 
 
 ##### Messages
-The device can be configured to receive generic messages coming from the cloud (Microsoft Azure IoT Hub C2D Messages).
+The device can be configured to receive generic **messages** coming from the cloud (Microsoft Azure IoT Hub C2D Messages).
 
 ##### Twins
 ###### Desired
-Any change in a Desired property (device level) is notified to the device and it can be handled.
+Any change in a **Desired Property** (device level) is notified to the device and it can be handled.
 
-###### Tags
-Device Twin and inherently Tags can be read by the device.
 
 > ![NOTE]
 > 
 > ###### Tags and Microsoft IoT Hub Jobs
 >
-> The simulator can benefit from the use of Microsoft IoT Hub Jobs for operations based in property queries.
-> A typical example of this would be a FOTA (Firmware Over The Air) update according to criteria based in Twin.Tag properties (ex: firmwareVersion, location, environment, etc).
+> The simulator can benefit from the use of **Microsoft IoT Hub Jobs** for operations based in property queries.
+> A typical example of this would be a **FOTA** (Firmware Over The Air) update according to criteria based in **Twin.Tag properties* (ex: firmwareVersion, location, environment, etc).
 
 
 ### Modules
@@ -80,7 +78,7 @@ Device Twin and inherently Tags can be read by the device.
 3. [Error](####error.json) messages (functional errors sent by devices)
 
 ##### Twins
-Modules send updated Reported Properties (Twins) after many operations/commands.
+Modules send updated **Reported Properties (Twins)** after many operations/commands.
 
 > [!NOTE]
 > 
@@ -91,23 +89,21 @@ Modules send updated Reported Properties (Twins) after many operations/commands.
 
 |Method name |Description|Request|Response|Comments|
 |:-|:-|:-|:-|:-|
-| Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifiying that the Reboot Direct Method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
-| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifiying that the OnOff Direct Method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
-| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifiying that the ReadTwins Direct Method has been called (string).</li><li>result code, 200.</li></ul>|
-| GenericJToken | Generic method | JSON Token | <ul><li>message notifiying that the GenericJToken Direct Method has been called (string).</li><li> result code, 200</li></ul>|
-| Generic | Generic method | string | <ul><li>message notifiying that the Generic Direct Method has been called (string).</li><li> result code, 200</li></ul>|
-| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifiying that the SetTelemetryInterval Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| Reboot | Simulates a device reboot operation. | NA | <ul><li>message notifying that the Reboot Direct Method has been called (string).</li><li> result code, 200</li></ul>|Sends Twins (Reported properties) notifying the reboot.|
+| OnOff | Turns a given device on/off. | JSON Object | <ul><li>message notifying that the OnOff Direct Method has been called (string). The message contains request's payload.</li><li> result code, 200</li></ul>|
+| ReadTwins | Orders a given device to read its Twin data. | NA | <ul><li>message notifying that the ReadTwins Direct Method has been called (string).</li><li>result code, 200.</li></ul>|
+| GenericJToken | Generic method | JSON Token | <ul><li>message notifying that the GenericJToken Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| Generic | Generic method | string | <ul><li>message notifying that the Generic Direct Method has been called (string).</li><li> result code, 200</li></ul>|
+| SetTelemetryInterval | Updates the time rate used to send telemetry data. | seconds (int) | <ul><li>message notifying that the SetTelemetryInterval Direct Method has been called (string).</li><li> result code, 200</li></ul>|
 
 
 ##### Messages
-Each module can be configured to receive generic messages coming from the cloud (Microsoft Azure IoT Hub).
+Each module can be configured to receive generic **messages** coming from the cloud (Microsoft Azure IoT Hub).
 
 ##### Twins
 ###### Desired
-Any change in a Desired property (**module level**) is notified to the module and it can be handled.
+Any change in a **Desired property** (***module level***) is notified to the module and it can be handled.
 
-###### Tags
-Twins and inherently Tags can be read by the module.
 
 
 ## How does the simulator work?
@@ -120,18 +116,19 @@ The features of the application rely on two main components:
  
  The device component is configured by a ***devicesettings.json*** file while the modules are configured by a ***modulessettings.json*** file.
 
+<br/>
 
  *Device model architecture*
  ![Device model architecture](images/GlobalDiagrams.png)
 
-
+<br/>
 
 ### Runing the simulator
  The simulator is a .NET Core application.
  
  To run the simulator, there are two alternatives:
-  1. runing the simulator as a **.NET Core application** (Console Application)
-  1. runing the *Docker container* (which contains in turn the .NET Core binaries, packages and other required prerequisites)
+  1. running the simulator as a **.NET Core application** (Console Application)
+  1. running the *Docker container* (which contains in turn the .NET Core binaries, packages and other required prerequisites)
   
  > ![NOTE]
  > 
@@ -141,7 +138,7 @@ The features of the application rely on two main components:
 
  > ![IMPORTANT]
  > 
- > The 3 configurations files have be present and contain the proper Microsoft IoT Hub connection strings, IDs or keys.
+ > The 3 configurations files have be present and contain the proper Microsoft Azure IoT Hub connection strings, IDs or keys.
 
  
  #### Runing .NET Core application
@@ -237,12 +234,12 @@ Properties are quite self-explanatory.
 
 > [!NOTE]
 > 
-> Emission frequency rates are set in seconds.
+> Emission intervals are set in seconds.
 
 
 #### Modules
 IoT Simulator's device can contain **zero, one or more modules but no module is mandatory**.
-Modules' behaviors are configured by the *modulessettings.json* configuration file.
+Behaviors of modules are configured by the *modulessettings.json* configuration file.
 
 
 > Example of a configuration file of two modules:
@@ -293,11 +290,11 @@ Modules' behaviors are configured by the *modulessettings.json* configuration fi
 
 > [!NOTE]
 > 
-> Emission frequency rates are set in seconds.
+> Emission intervals are set in seconds.
 
 
 
-### Configuration files
+### Configuration files reminder
 #### appsettings.json
  ```json
  {
@@ -338,7 +335,7 @@ Properties are quite self-explanatory.
 
 > [!NOTE]
 > 
-> Emission frequency rates are set in seconds.
+> Emission intervals are set in seconds.
 
 #### modulessettings.json
 ```json
@@ -388,7 +385,7 @@ Properties are quite self-explanatory.
 
 > [!NOTE]
 > 
-> Emission frequency rates are set in seconds.
+> Emission intervals are set in seconds.
 
 
 ### Messages
@@ -399,9 +396,18 @@ The messages below are basic proposals to start working. You will probably need 
 > 
 > `deviceId` and `messageType` fields have been included in the message to simplify processes in the backend side.
 > Indeed, even though these two properties can be reachable in the metadata of the message, having them inside the message itself brings simplicity to richer scenarios (ex: gateways sending messages in behalf of devices) and storing that information in the repository (autosufficient message). 
-> Debugging and message routings at Microsoft Azure IoT Hub level are other of the fields that benefit from this practice.
+> Debugging and message routing in Microsoft Azure IoT Hub are other of the fields that benefit from this practice.
 
 This being said, if at some point you need to avoid including that information in the message, feel free to do it. Routing could also work on metadata.
+
+> [!NOTE]
+>
+> Microsoft Azure IoT Hub does not require the devices send JSON messages.
+> If your project requires other formats (ex: very small hexadecimal messages, frequent in IoT small devices), Microsoft Azure IoT Hub has no problem in processing them. Also, you can still use Azure IoT Device Simulator; it will require small code changes in the Message Service but all the remaining implemented features remain valid.
+
+> [!WARNING]
+> Not all the IoT projects can implement C2D features. Devices and communication platforms have to take into account the requirements of such features.
+
 
 #### commissioning.json
 ```json
@@ -478,9 +484,7 @@ This responds to data flow optimization scenarios and explains the chosen messag
 
 ## Evolutivity
 
-If you have the source code of the solution (open sourcing the project is being discussed at the moment this documentation is being written), you can follow the steps below to customize how messages are created.
-
-Message generation relies on services that implement the interfaces below:
+If you need to customize messages, their generation relies on services that implement the interfaces below:
  - `ITelemetryMessageService` for telemetry or measured data
  - `IErrorMessageService`
  - `ICommissioningMessageService`
@@ -513,7 +517,7 @@ Provisioning represents the action of creating an identity for the device in the
 ## Azure IoT related vocabulary
 
 ## Twin
-[Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) store device state information including metadata, configurations, and conditions. Azure IoT Hub maintains a device twin for each device that you connect to IoT Hub.
+[Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) store device state information including metadata, configurations, and conditions. Microsoft Azure IoT Hub maintains a device twin for each device that you connect to IoT Hub.
 
 Similarly, [module twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-module-twins) play the same role thant device twins but at module level.
 
