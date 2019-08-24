@@ -3,35 +3,35 @@
 
 ## How to use the Azure IoT Device Simulator?
 
-The IoT Simulator has been containerized in order to simplify its delivery and use.
+The IoT simulator has been containerized in order to simplify its delivery and use.
 You can find the Docker image at [this location](https://hub.docker.com/r/jonmikeli/azureiotdevicesimulator).
 
-If you are not on containers, you can use the source code to compile the application and use it as a regular .NET Core 2.2.x Console application.
+If you need or prefer the binary format, you can use the source code to compile the application and use it as a regular .NET Core 2.2.x Console application.
 
-If you need detailed documentation about what Azure IoT Device Simulator (or IoT Simulator) is, you can find additional information at:
+If you need detailed documentation about what Azure IoT Device Simulator is, you can find additional information at:
  - [Readme](../../../../Readme.md)
  - [Help](Help.md)
 
 
 ## How to get a Docker image?
 ### Prerequisites
-In order to use a Docker container, you need all the prerequistes [Docker](https://www.docker.com/) could need in your system.
+In order to use a Docker container, you need to check [Docker](https://www.docker.com/) prerequisites.
 
-In addition, you will need an internet connection and be sure the ports below are open in your firewall:
+Do not forget you will need an internet connection with specific open ports:
  - 8883
  - 5671
  - 443
 [Ports](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-protocols) required to communicate with Microsoft Azure IoT Hub.
 
-Finally, you will need enough storage memory to download the Docker image and create one or more containers.
+Finally, you will need enough storage memory to download the Docker image and create your containers.
 
 
 ### Steps to follow
-The IoT Simulator needs two basic things before starting:
+The Azure IoT Device Simulator needs two basic things before starting:
  - settings (need to be updated with proper connection settings)
  - message templates (included by default)
 
- Once those items are ready, a single command allows to start the application.
+ Once those items are ready, a single command allows starting the application.
 
 #### Settings
 Settings are based on 3 files:
@@ -39,19 +39,19 @@ Settings are based on 3 files:
  - [devicesettings.json](#####devicesettings.json)
  - [modulessettings.json](#####modulessettings.json)
 
-For details and explainations, see [help](Help.md).
+For details and explanations, see [help](Help.md).
 
 > [!TIP]
 > 
 > The solution takes into account **settings** depending on the environment.
 > It can be set trough the environment variable ENVIRONMENT.
-> The solution looks for settings files respecting the common pattern *file.ENVIRONMENT.json* (similar to transformation files).
+> The solution looks for settings files following the pattern *file.ENVIRONMENT.json* (similar to transformation files).
 > Default setting files will be loaded first in case no environment file is found.
 
 ##### appsettings.json
 This file allows configuring system related items (logs, etc).
 
-**Production**
+**Release**
 
 Minimal logs settings.
 ```json
@@ -148,14 +148,21 @@ This file allows configuring module(s) simulation settings.
 
 ```
 
+
+> [!IMPORTANT]
+
+> Do not forget to set your own values for `connectionString`. 
+
+
+
 #### Message templates
 You will find in this section the default templates of the messages sent by the simulator.
 You are totally free to change and adapt them to your needs.
 
 > [!WARNING]
 > 
-> Just keep in mind that many values are randomized by a service before sending the messages.
-> This version of the simulator does not deal with dynamic JSON Schemas. So, if the message template is completely reviewed and new randomized properties are added, you will need to either update the existing message service or create yours and update the IoC/DI of the solution.
+> This first version includes a dependency between message templates and message service implementation (randomized values and ID properties).
+> For that reason, if the message template is completely reviewed and new randomized properties are added, you will need to either update the existing message service or create yours and update the IoC/DI settings.
 
 ##### Measured data / telemetry message
 ```json
