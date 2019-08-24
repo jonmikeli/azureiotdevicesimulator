@@ -448,18 +448,17 @@ namespace IoT.Simulator2.Services
             var data = Encoding.UTF8.GetString(methodRequest.Data);
             var content = JToken.FromObject(data);
 
-            // Check the payload is a single integer value
             if (content != null)
             {
                 _logger.LogDebug($"{logPrefix}::Generic call received: {JsonConvert.SerializeObject(content)}.");
 
-                // Acknowlege the direct method call with a 200 success message
+                // Acknowledge the direct method call with a 200 success message
                 string result = "{\"result\":\"Executed direct method: " + methodRequest.Name + "\"}";
                 return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
             }
             else
             {
-                // Acknowlege the direct method call with a 400 error message
+                // Acknowledge the direct method call with a 400 error message
                 string result = "{\"result\":\"Invalid parameter\"}";
                 return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 400));
             }
@@ -473,7 +472,7 @@ namespace IoT.Simulator2.Services
 
             _logger.LogDebug($"{logPrefix}::Generic call received: {data}.");
 
-            // Acknowlege the direct method call with a 200 success message
+            // Acknowledge the direct method call with a 200 success message
             string result = "{\"result\":\"Executed direct method: " + methodRequest.Name + "\"}";
             return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
         }
@@ -493,7 +492,7 @@ namespace IoT.Simulator2.Services
                 _logger.LogDebug($"{logPrefix}::{_deviceSettings.ArtifactId}::Latency test callback::latency: {callbackTimestamp - initialtimestamp} s.");
             }
 
-            // Acknowlege the direct method call with a 200 success message
+            // Acknowledge the direct method call with a 200 success message
             string result = "{\"result\":\"Executed direct method: " + methodRequest.Name + "\",\"latency\":" + (callbackTimestamp - initialtimestamp).ToString() + "}";
             return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
         }
@@ -502,14 +501,14 @@ namespace IoT.Simulator2.Services
         {
             SendDeviceToCloudLatencyTestAsync(_deviceId, 0);
 
-            // Acknowlege the direct method call with a 200 success message
+            // Acknowledge the direct method call with a 200 success message
             string result = "{\"result\":\"Executed direct method: " + methodRequest.Name + "\"}";
             return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
         }
 
         private Task<MethodResponse> Reboot(MethodRequest methodRequest, object userContext)
         {
-            // In a production device, you would trigger a reboot scheduled to start after this method returns
+            // In a production device, you would trigger a reboot scheduled to start after this method returns.
             // For this sample, we simulate the reboot by writing to the console and updating the reported properties 
             RebootOrchestration();
 
