@@ -150,7 +150,7 @@ This file allows configuring module(s) simulation settings.
 
 
 > [!IMPORTANT]
-
+>
 > Do not forget to set your own values for `connectionString`. 
 
 
