@@ -7,11 +7,8 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace IoT.Simulator2.Services
 {
@@ -337,13 +334,13 @@ namespace IoT.Simulator2.Services
             {
                 _logger.LogDebug($"{logPrefix}::{ModuleSettings.ArtifactId}::Telemetry interval set to {_telemetryInterval} seconds.");
 
-                // Acknowlege the direct method call with a 200 success message
+                // Acknowledge the direct method call with a 200 success message
                 string result = "{\"result\":\"Executed direct method: " + methodRequest.Name + "\"}";
                 return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
             }
             else
             {
-                // Acknowlege the direct method call with a 400 error message
+                // Acknowledge the direct method call with a 400 error message
                 string result = "{\"result\":\"Invalid parameter\"}";
                 return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 400));
             }
@@ -356,18 +353,17 @@ namespace IoT.Simulator2.Services
             var data = Encoding.UTF8.GetString(methodRequest.Data);
             var content = JToken.FromObject(data);
 
-            // Check the payload is a single integer value
             if (content != null)
             {
                 _logger.LogDebug($"{logPrefix}::{ModuleSettings.ArtifactId}::Generic call received: {JsonConvert.SerializeObject(content)}.");
 
-                // Acknowlege the direct method call with a 200 success message
+                // Acknowledge the direct method call with a 200 success message
                 string result = "{\"result\":\"Executed direct method: " + methodRequest.Name + "\"}";
                 return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
             }
             else
             {
-                // Acknowlege the direct method call with a 400 error message
+                // Acknowledge the direct method call with a 400 error message
                 string result = "{\"result\":\"Invalid parameter\"}";
                 return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 400));
             }
@@ -381,7 +377,7 @@ namespace IoT.Simulator2.Services
 
             _logger.LogDebug($"{logPrefix}::{ModuleSettings.ArtifactId}::Generic call received: {data}");
 
-            // Acknowlege the direct method call with a 200 success message
+            // Acknowledge the direct method call with a 200 success message
             string result = "{\"result\":\"Executed direct method: " + methodRequest.Name + "\"}";
             return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
         }

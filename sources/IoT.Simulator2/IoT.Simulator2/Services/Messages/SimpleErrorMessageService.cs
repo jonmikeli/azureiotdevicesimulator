@@ -2,9 +2,7 @@
 using IoT.Simulator2.Tools;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IoT.Simulator2.Services
@@ -24,7 +22,7 @@ namespace IoT.Simulator2.Services
         }
 
         public async Task<string> GetMessageAsync()
-        {            
+        {
             string messageString = File.ReadAllText(fileTemplatePath);
 
             if (string.IsNullOrEmpty(messageString))

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 namespace IoT.Simulator2.Tools
 {
@@ -20,6 +18,6 @@ namespace IoT.Simulator2.Tools
         public static string HeaderMessage
         {
             get { return _headerMesage; }
-        }        
+        }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using IoT.Simulator2.Extensions;
-using IoT.Simulator2.Settings;
 using IoT.Simulator2.Tools;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IoT.Simulator2.Services
@@ -50,7 +47,7 @@ namespace IoT.Simulator2.Services
             _logger.LogTrace($"{logPrefix}::{artifactId}::DeviceId and moduleId updated in the message template.");
 
             return messageString;
-        }       
+        }
 
         public async Task<string> GetRandomizedMessageAsync(string deviceId, string moduleId)
         {
