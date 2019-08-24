@@ -3,8 +3,8 @@
 This project has for purpose to help IoT developers and testers. The solution is an Azure IoT Device simulator that implements different types of Cloud To Device (C2D) / Device To Cloud (D2C) flows between [Microsoft Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/) and the simulated device.
 
 For more information:
- - [*Help  and details*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md)
- - [*How to*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
+ - [*How to (Quickstart)*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
+ - [*Help  and details*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md) 
 
 Example of uses:
  - development tool for developers working in Microsoft Azure IoT solutions (cloud)
