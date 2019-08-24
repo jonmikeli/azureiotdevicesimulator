@@ -5,6 +5,8 @@ This project has for purpose to help IoT developers and testers. The solution is
 For more information:
  - [*How to (Quickstart)*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
  - [*Help  and details*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md) 
+ 
+ 
 
 Example of uses:
  - development tool for developers working in Microsoft Azure IoT solutions (cloud)
@@ -13,13 +15,19 @@ Example of uses:
  - fast and simple development of IoT devices
  - etc
 
+
+
 Technical information:
  - .NET Core 2.x
  - Microsoft Azure IoT SDK (Device capabilities, including IoT Hub modules)
 
+
+
 *Azure IoT Device Simulator logs*
 
 ![Azure IoT Device Simulator Logs](sources/IoT.Simulator2/IoT.Simulator2/docs/images/AzureIoTDeviceSimulatorLos.gif)
+
+
 
 ## Global features
  - device simulation
