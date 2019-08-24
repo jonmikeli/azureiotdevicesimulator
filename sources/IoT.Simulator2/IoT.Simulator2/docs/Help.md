@@ -498,7 +498,7 @@ services.AddTransient<IErrorMessageService, SimpleErrorMessageService>();
 services.AddTransient<ICommissioningMessageService, SimpleCommissioningMessageService>();
 ```
 
-# Lexique
+# Glossary
 A few word explanations to be sure they are understood in the context of this document.
 
 ## Commissioning
