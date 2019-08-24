@@ -14,13 +14,14 @@ The application consist of:
    - [error.json](####error.json) (examples below)
    - [measureddata.json](####measureddata.json) (examples below)
 
+<br/>
 
 *Global device model architecture*
 
 
 ![Global device model architecture](images/GlobalDiagrams.png)
 
-
+<br/>
 
 ## Features
 ### Device
