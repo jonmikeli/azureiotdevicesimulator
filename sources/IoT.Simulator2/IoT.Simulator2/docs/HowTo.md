@@ -1,7 +1,7 @@
 ﻿# Azure IoT Device Simulator - How To
 
 
-## How to use the IoT simulator?
+## How to use the Azure IoT Device Simulator?
 
 The IoT Simulator has been containerized in order to simplify its delivery and use.
 You can find the Docker image at [this location](https://hub.docker.com/r/jonmikeli/azureiotdevicesimulator).
