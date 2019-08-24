@@ -11,6 +11,7 @@ Example of uses:
  - tester tool in IoT-oriented projects
  - scalable IoT simulation platforms
  - fast and simple development of IoT devices
+ - etc
 
 Technical information:
  - .NET Core 2.x
