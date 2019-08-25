@@ -1,12 +1,12 @@
-﻿# Azure IoT Device Simulator - Readme
+# Azure IoT Device Simulator - Readme
 
 This project has for purpose to help IoT developers and testers. The solution is an Azure IoT Device simulator that implements different types of Cloud To Device (C2D) / Device To Cloud (D2C) flows between [Microsoft Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/) and the simulated device.
 
 <br/>
 
 For more information:
- - [*How to (Quickstart)*](HowTo.md)
- - [*Help  and details*](Help.md) 
+ - [*How to (Quickstart)*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
+ - [*Help  and details*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md) 
  
  <br/>
 
@@ -27,7 +27,7 @@ Technical information:
 
 *Azure IoT Device Simulator logs*
 
-![Azure IoT Device Simulator Logs](images/AzureIoTDeviceSimulatorLos.gif)
+![Azure IoT Device Simulator Logs](sources/IoT.Simulator2/IoT.Simulator2/docs/images/AzureIoTDeviceSimulatorLos.gif)
 
 <br/>
 
@@ -70,7 +70,7 @@ Technical information:
 The features at the module level are the identical to the device features except for the latency tests.
 
 
-[details](Help.md).
+[details](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
 
   
 ## Global technical features
@@ -115,5 +115,5 @@ Functional features are based on these generic technical features:
 
 ## More information
 
-- Details about **HOW the solution WORKS** are provided in the [help](Help.md) section.
-- Details about **HOW the solution can be USED** are provided in the [how to](HowTo.md) section.
+- Details about **HOW the solution WORKS** are provided in the [help](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md) section.
+- Details about **HOW the solution can be USED** are provided in the [how to](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md) section.
