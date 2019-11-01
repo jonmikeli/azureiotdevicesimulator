@@ -1,0 +1,39 @@
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2-stretch-slim AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
+WORKDIR /src
+COPY ["IoT.Simulator.csproj", "IoT.Simulator/"]
+RUN dotnet restore "IoT.Simulator/IoT.Simulator.csproj"
+COPY . IoT.Simulator/
+WORKDIR "/src/IoT.Simulator"
+RUN pwd
+RUN ls -al
+RUN dotnet build "IoT.Simulator.csproj" -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish "IoT.Simulator.csproj" -c Release -o /app
+
+
+FROM base AS final
+
+ARG packageVersion
+ARG environmentName
+ARG author
+ARG copyright
+ARG github
+ARG name
+ARG description
+ARG tags
+
+WORKDIR /app
+COPY --from=publish /app .
+
+LABEL version=${packageVersion}
+LABEL environment=${environmentName}
+LABEL author=${author}
+LABEL copyright=${copyright}
+LABEL github=${github}
+LABEL name=${name}
+LABEL description=${description}
+LABEL tags=${tags}

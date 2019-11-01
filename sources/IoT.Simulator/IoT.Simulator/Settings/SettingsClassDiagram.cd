@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="IoT.Simulator.Settings.DeviceSettings">
+    <Position X="0.5" Y="2.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Settings\DeviceSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IoT.Simulator.Settings.ModuleSettings">
+    <Position X="4.5" Y="2.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Settings\ModuleSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IoT.Simulator.Settings.SimulationSettingsDevice">
+    <Position X="8.25" Y="5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAYAAAAAAAAAQAAAAgACAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Settings\SimulationSettingsDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IoT.Simulator.Settings.SimulationSettingsBase">
+    <Position X="10.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAAAAAAIAAAAAAABQAhEAAQACAAAABAACAAAA=</HashCode>
+      <FileName>Settings\SimulationSettingsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IoT.Simulator.Settings.SimulationSettingsModule">
+    <Position X="12.75" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Settings\SimulationSettingsModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IoT.Simulator.Settings.SettingsBase">
+    <Position X="2.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAAAAAAAA=</HashCode>
+      <FileName>Settings\SettingsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
