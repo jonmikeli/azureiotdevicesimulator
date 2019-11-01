@@ -5,8 +5,8 @@ This project has for purpose to help IoT developers and testers. The solution is
 <br/>
 
 For more information:
- - [*How to (Quickstart)*](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md)
- - [*Help  and details*](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md) 
+ - [*How to (Quickstart)*](sources/IoT.Simulator/IoT.Simulator/docs/HowTo.md)
+ - [*Help  and details*](sources/IoT.Simulator/IoT.Simulator/docs/Help.md) 
  
  <br/>
 
@@ -27,7 +27,7 @@ Technical information:
 
 *Azure IoT Device Simulator logs*
 
-![Azure IoT Device Simulator Logs](sources/IoT.Simulator2/IoT.Simulator2/docs/images/AzureIoTDeviceSimulatorLos.gif)
+![Azure IoT Device Simulator Logs](sources/IoT.Simulator/IoT.Simulator/docs/images/AzureIoTDeviceSimulatorLos.gif)
 
 <br/>
 
@@ -70,7 +70,7 @@ Technical information:
 The features at the module level are the identical to the device features except for the latency tests.
 
 
-[details](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md).
+[details](sources/IoT.Simulator/IoT.Simulator/docs/Help.md).
 
   
 ## Global technical features
@@ -115,5 +115,5 @@ Functional features are based on these generic technical features:
 
 ## More information
 
-- Details about **HOW the solution WORKS** are provided in the [help](sources/IoT.Simulator2/IoT.Simulator2/docs/Help.md) section.
-- Details about **HOW the solution can be USED** are provided in the [how to](sources/IoT.Simulator2/IoT.Simulator2/docs/HowTo.md) section.
+- Details about **HOW the solution WORKS** are provided in the [help](sources/IoT.Simulator/IoT.Simulator/docs/Help.md) section.
+- Details about **HOW the solution can be USED** are provided in the [how to](sources/IoT.Simulator/IoT.Simulator/docs/HowTo.md) section.
